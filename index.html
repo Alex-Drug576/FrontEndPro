@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lessonTwo</title>
+    <title>lessonThree</title>
 </head>
 <body>
     <script>
-        var userName = "Dragomareskiy Alexsandr";
-        var userAge = "18 years old";
-        var userHello = "Hello world";
-        console.log(userName + "\n" + userAge + "\n" + userHello);   
-         
-        console.log("+'40' + +'2' --- 40 + 2 = 42 \n'2' + 3 ** 2 --- 2 + 6 = 8\n3 ** 2 / 3 --- 6 / 3 = 2\n3 ** (9 / 3) --- 3 ** 3 = 9\nundefined + 1 --- Nan\n+null + 10 --- 0 + 10 = 10\nnull / 5 --- 0\n'hello' + null --- 'hellonull'\n'hello' - undefined + ' ' --- 'Nan' + ' ' = 'Nan '\n'30' + 3 - '3' --- '303' - '3' = 300\n10 % '5' --- 0");
-
-        var number = 5; //инициализация переменной 
-        2 * ++number; //Сначало number = 6 ,а потом 2 * 6 = 12
-        2 * number--; //Сначало 2 * 5 = 10,а потом number = 4
-        console.log(number);
+        console.log("false && true || true --- true\nfalse && (true || true) --- false && true = false\n'10' + (5 === 6) --- '10' + false = '10false'\n'10' - 5 === 6 --- 5 === 6 = false\n(+null == false) < 1 --- (0 == false) < 1 = true < 1 = false\n(+null == false) < 1 ** 5 --- true < 1 = false\nundefined + 5 > null + 1 --- Nan > 1 = false")
+        
+        var text;
+        var age = prompt("Hello\n How old are you?");
+	    var count = age % 100;
+	    if (count >= 5 && count <= 20) {
+		    text = 'лет';
+	    } else {
+	    	count = count % 10;
+	    	if (count == 1) {
+	    		text = 'год';
+	    	} else if (count >= 2 && count <= 4) {
+	    		text = 'года';
+	    	} else {
+	    		text = 'лет';
+	    	}
+	    }
+        alert(age + " " + text);
     </script>
 </body>
 </html>
