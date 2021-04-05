@@ -4,55 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lessonFour</title>
+    <title>lessonFive</title>
 </head>
 <body>
     <script>
-		var firTree = "";
-		var minHeight = 1;
-		var maxHeight = 1;
-		var max = 1; 
-		//Получаем высоту елки 
-        var heightFirTree = prompt("Enter the height of the fir-tree:");
-		// Если елка не выше 19, то высота ствола дерева будет на 2 отделение
-		if(heightFirTree < 19){
-			var lengthTreeThunk = 2;
-			var treeThunk = 1;
-			var myNumber = 3;
-		}else {
-			var lengthTreeThunk = 4;
-			var treeThunk = 1;
-			var myNumber = 5;
-		}
-		//Находим количество элементов в последней строке
-		for(var i = 1; i < heightFirTree; i++){
-			maxHeight +=2;
-		}
-		//С начало распределяется по строкам, а потом сколько пробелов нужно в одной строке и количество * в строке
-		for(var i = 1; i <= heightFirTree; i++){
-			max = (maxHeight - minHeight) / 2;
-			for(var j = 1; j <= max; j++){
-				firTree += ' ';
+		//Функция, которая принимает 4 значение: предложение, символ, длину строки, определение символа
+		function padString(target, char,length, fromStart){
+			//Одерживаем нужные параметры 
+			target = prompt("Enter your string:");
+			char = prompt("What symbol do you want:");
+			length =prompt("What length do you want:");
+			fromStart = prompt("Where do you want the symbols to appear(True - in front of or False - behind):");
+			//Проверка на ввод нужного параметра
+			while(fromStart !== "False" && fromStart !== "True"){
+				fromStart = prompt("Try,again:");
 			}
-			for(var j = 1; j <= minHeight; j++){
-				firTree += '*';
+			//С какой стороны будут находится символы
+			if(fromStart == "True"){
+				while(target.length < length){
+					target = char + target;
+					target.length++;
+				}
+			}else{
+				while(target.length < length){
+					target += char;
+					target.length++;
+				}
 			}
-			firTree += '\n';
-			minHeight += 2;
+			alert(target)
 		}
-		treeThunk = (maxHeight - myNumber) / 2;
-		//Также само с елкой, только для ствола дерева
-		for( var i = 1; i <= lengthTreeThunk; i++){
-			for(var j = 1; j <= treeThunk; j++){
-				firTree += ' ';
-			}
-			for(var j = 1; j <= myNumber; j++){
-				firTree += '*';
-			}
-			firTree += '\n';
-		}
-		//Вывод результата на экран 
-		console.log(firTree);
+		padString();
     </script>
 </body>
 </html>
