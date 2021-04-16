@@ -8,19 +8,8 @@
 </head>
 <body>
     <script>
-		//Функция, которая принимает 4 значение: предложение, символ, длину строки, определение символа
-		function padString(target, char,length, fromStart){
-			//Одерживаем нужные параметры 
-			target = prompt("Enter your string:");
-			char = prompt("What symbol do you want:");
-			length =prompt("What length do you want:");
-			fromStart = prompt("Where do you want the symbols to appear(True - in front of or False - behind):");
-			//Проверка на ввод нужного параметра
-			while(fromStart !== "False" && fromStart !== "True"){
-				fromStart = prompt("Try,again:");
-			}
-			//С какой стороны будут находится символы
-			if(fromStart == "True"){
+		function padString(target, char,length, fromStart){ 
+			if(fromStart ===  Boolean(true)){
 				while(target.length < length){
 					target = char + target;
 					target.length++;
@@ -31,9 +20,9 @@
 					target.length++;
 				}
 			}
-			alert(target)
+			alert(target);
 		}
-		padString();
+		padString('hello', '*', 7);
     </script>
 </body>
 </html>
