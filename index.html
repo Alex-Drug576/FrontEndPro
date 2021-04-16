@@ -8,8 +8,14 @@
 </head>
 <body>
     <script>
-        console.log("false && true || true --- true\nfalse && (true || true) --- false && true = false\n'10' + (5 === 6) --- '10' + false = '10false'\n'10' - 5 === 6 --- 5 === 6 = false\n(+null == false) < 1 --- (0 == false) < 1 = true < 1 = false\n(+null == false) < 1 ** 5 --- true < 1 = false\nundefined + 5 > null + 1 --- Nan > 1 = false")
-        
+        console.log("false && true || true - Firstly operator && then ||, false && true = false then false || true = true");
+        console.log('false && (true || true) - Firstly operator || then &&, true || true = true then false && true = false ');
+		console.log('"10" + (5 === 6) - Firstly operator === then +, (5 === 6) = false then  "10" + false = "10false" ');
+		console.log('"10" - 5 === 6 - Firstly operator - then ===, "10" - 5 = 5 then 5 === 6 = false ');
+		console.log('(+null == false) < 1 - Firstly operator unary plus then == and last <, +null = 0 then 0 == false = true and last true < 1 = false ');
+		console.log('(+null == false) < 1**5 - Firstly operator unary plus then == then ** and last <, +null = 0 then 0 == false = true then 1**5 = 1 and last true < 1 = false ');
+		console.log('undefined + 5 > null + 1 - Firstly operator plus left sight then plus right sight and last >, undefined + 5 =  NaN then null + 1 = 1 and last  NaN > 1 = false ');
+		
         var text;
         var age = prompt("Hello\n How old are you?");
 	    var count = age % 100;
