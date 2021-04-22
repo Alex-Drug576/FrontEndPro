@@ -1,50 +1,14 @@
-const user = {
-    name: 'Alex',
-    age: 23,
-    city: 'Odessa',
-};
-const userNew = {};
-
-//Copy an object to another object
-function cloneObj(obj){
-    for(const key in obj){
-        userNew[key] = obj[key];
-    }
-    return userNew;
+let valueFun = 0;
+function TakeValue(value) {
+    return valueFun += value;
 }
-cloneObj(user);
-
-//Return a string of values
-let stringValues = '';
-function getValues(obj,seperator){
-    for(const key in obj){
-        stringValues += obj[key] + seperator;
-    }
-    //Remoted the last seperator
-    stringValues = stringValues.slice(0, -1);
-    return stringValues;
+TakeValue(1);
+function createCounter(start, step) {
+    let counter = start;
+    return function () {
+        counter += step;
+        return counter;
+    };
 }
-getValues(user, '_');
-
-//Return a string of keys
-let stringKeys = '';
-function getKeys(obj,seperator){
-    for(const key in obj){
-        stringKeys += key + seperator;
-    }
-    //Remoted the last seperator
-    stringKeys = stringKeys.slice(0, -1);
-    return stringKeys;
-}
-getKeys(user, '_');
-
-//Return a string of objects
-let stringObjects = '';
-function getEntries(obj){
-    for(const key in obj){
-        stringObjects += key + ': ' + obj[key] + '\n';
-    }
-    return stringObjects;
-}
-getEntries(user);
-
+const goo = createCounter(1, 3);
+goo();
