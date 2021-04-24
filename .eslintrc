@@ -36,6 +36,7 @@
         "no-dupe-else-if": 2,
         "no-eval": 2,
         "no-implied-eval": 2,
+        "no-magic-numbers": 2,
         "no-multi-spaces": 2,
         "no-new-wrappers": 2,
         "no-param-reassign": 2,
