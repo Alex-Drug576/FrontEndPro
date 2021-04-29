@@ -1,30 +1,12 @@
-//function get variables and sum them
-const five = 5;
-const ten = 10;
-function sum() {
-    let sumVariables = 0;
-    return function (value) {
-        const result = value + sumVariables;
-        sumVariables += value;
-        return result;
-    };
+const foo = (fn, context) => () =>
+    fn.apply(context);
+function goo() {
+    return `Hello, ${this.name} ${this.surname}`;
 }
-const link = sum();
-link(five);
-//Obj that can sum variables with step and method that can reset variable
-function counter(start, step) {
-    const count = start;
-    let sumStep = 0;
-    return {
-        get count() {
-            const result = count + sumStep;
-            sumStep += step;
-            return result;
-        },
-        set count(reset) {
-            sumStep = reset;
-        },
-    };
-}
-const fit = counter(ten, five);
-fit.count();
+const lo = {
+    name: 'alex',
+    surname: 'Mnogitskiy',
+};
+const ho = foo(goo, lo);
+ho();
+
