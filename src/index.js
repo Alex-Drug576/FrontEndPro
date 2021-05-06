@@ -1,12 +1,17 @@
-const foo = (fn, context, ...reset) => (...args) =>
-    fn.apply(context, [...reset, ...args]);
-function goo(context) {
-    return `Hello, ${this.name} ${this.surname} ${context}`;
+const obj = {};
+function returnObject(str) {
+    let num = str;
+    let result = 0;
+    obj['steps'] = str;
+    for (let i = 0; ; i++) {
+        result = String(Number(num) + Number(num.split('').reverse().join('')));
+        if (result === result.split('').reverse().join('')) {
+            obj['result'] = result;
+            return result;
+        } else {
+            obj['steps'] += ' ' + result;
+            num = result;
+        }
+    }
 }
-const lo = {
-    name: 'alex',
-    surname: 'Mnogitskiy',
-};
-const ho = foo(goo, lo);
-ho('!');
-
+returnObject('96');
