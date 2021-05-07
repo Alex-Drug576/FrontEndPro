@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lessonThree</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>lessonThree</title>
 </head>
+
 <body>
-    <script>
-        console.log("false && true || true - Firstly operator && then ||, false && true = false then false || true = true");
-        console.log('false && (true || true) - Firstly operator || then &&, true || true = true then false && true = false ');
-		console.log('"10" + (5 === 6) - Firstly operator === then +, (5 === 6) = false then  "10" + false = "10false" ');
-		console.log('"10" - 5 === 6 - Firstly operator - then ===, "10" - 5 = 5 then 5 === 6 = false ');
-		console.log('(+null == false) < 1 - Firstly operator unary plus then == and last <, +null = 0 then 0 == false = true and last true < 1 = false ');
-		console.log('(+null == false) < 1**5 - Firstly operator unary plus then == then ** and last <, +null = 0 then 0 == false = true then 1**5 = 1 and last true < 1 = false ');
-		console.log('undefined + 5 > null + 1 - Firstly operator plus left sight then plus right sight and last >, undefined + 5 =  NaN then null + 1 = 1 and last  NaN > 1 = false ');
-		
-        var text;
-        var age = prompt("Hello\n How old are you?");
-	    var count = age % 100;
-	    if (count >= 5 && count <= 20) {
-		    text = 'лет';
-	    } else {
-	    	count = count % 10;
-	    	if (count == 1) {
-	    		text = 'год';
-	    	} else if (count >= 2 && count <= 4) {
-	    		text = 'года';
-	    	} else {
-	    		text = 'лет';
-	    	}
-	    }
-        alert(age + " " + text);
-    </script>
+	<script>
+		console.log("false && true || true - будет true, потому что оператор && выше чем оператор ||");
+		console.log('false && (true || true) - будет false, потому что сначало выполнится действие в скобках, а потом и оператор && ');
+		console.log('"10" + (5 === 6) -  будет 10false, потому что сначало сработает строгое стравнение, а потом число соеденится с false ');
+		console.log('"10" - 5 === 6 - будет false, потому что сначало сработает оператор - , а потом строгое сравнение');
+		console.log('(+null == false) < 1 - будет false, потому что сработает унарный плюс, потом сравнение и последний оператор < ');
+		console.log('(+null == false) < 1 - будет false, потому что сработает унарный плюс, потом сравнение, степень и последнее сравнение ');
+		console.log('undefined + 5 > null + 1 - будет false, потому что сработет левый плюс, потом правый и сравнение');
+
+		var text;
+		var age = prompt("Hello\n How old are you?");
+		var count = age % 100;
+		if (count >= 5 && count <= 20) {
+			text = 'лет';
+		} else {
+			count = count % 10;
+			if (count == 1) {
+				text = 'год';
+			} else if (count >= 2 && count <= 4) {
+				text = 'года';
+			} else {
+				text = 'лет';
+			}
+		}
+		alert(age + " " + text);
+	</script>
 </body>
+
 </html>
